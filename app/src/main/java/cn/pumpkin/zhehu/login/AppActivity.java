@@ -13,7 +13,7 @@ import cn.pumpkin.zhehu.activity.BaseActivity;
  * @author: zhibao.Liu
  * @version:
  * @date: 2018/11/27 20:36
- * @des: APP启动首页
+ * @des: APP 启动首页
  * @see {@link }
  */
 

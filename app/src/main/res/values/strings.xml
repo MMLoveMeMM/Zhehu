@@ -2,5 +2,8 @@
     <string name="app_name">Zhehu</string>
 
     <string name="login_phoneinput">请输入手机号码</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_base_main">BaseMainActivity</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

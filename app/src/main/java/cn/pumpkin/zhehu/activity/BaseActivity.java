@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
+import com.githang.statusbar.StatusBarCompat;
+
+import cn.pumpkin.zhehu.R;
+
 /**
  * @author: zhibao.Liu
  * @version:
@@ -29,6 +33,7 @@ public class BaseActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.colorPrimary));
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         activity = this;
 
