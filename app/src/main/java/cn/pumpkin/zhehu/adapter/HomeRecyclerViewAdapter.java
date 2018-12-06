@@ -83,10 +83,10 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             themeTitle.setText("励志");
         }else if (holder instanceof VideoViewHolder){
             ((VideoViewHolder)holder).userIconView.setImageResource(R.drawable.ic_launcher_background);
-            ((VideoViewHolder)holder).talkTitleView.setText("运动健儿");
-            ((VideoViewHolder)holder).talkContentView.setText("励志，俄小伙练习街头健身一年的体型变化，Dear Hard Work！");
-            ((VideoViewHolder)holder).talkPraisesView.setText("2780次");
-            ((VideoViewHolder)holder).talkCommentsView.setText("209条");
+            ((VideoViewHolder)holder).talkTitleView.setText(mTalkDatas.get(position).getTalkTitle());
+            ((VideoViewHolder)holder).talkContentView.setText(mTalkDatas.get(position).getTalkContent());
+            ((VideoViewHolder)holder).talkPraisesView.setText(mTalkDatas.get(position).getTalkPraises()+"");
+            ((VideoViewHolder)holder).talkCommentsView.setText(mTalkDatas.get(position).getTalkComments()+"");
 
             if (mOnItemClickListener!=null){
                 ((VideoViewHolder)holder).itemView.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +127,15 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             talkPraisesView = (TextView) itemView.findViewById(R.id.talkpraisecnt);
             talkCommentsView = (TextView) itemView.findViewById(R.id.talkcommentcnt);
         }
+    }
+
+    public void refresh(){
+
+    }
+
+    public void addMore(List<TalkDatas> datas){
+        mTalkDatas.addAll(datas);
+        this.notifyDataSetChanged();
     }
 
 }
