@@ -1,4 +1,4 @@
-package cn.pumpkin.zhehu.ui;
+package cn.pumpkin.zhehu.ui.view;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

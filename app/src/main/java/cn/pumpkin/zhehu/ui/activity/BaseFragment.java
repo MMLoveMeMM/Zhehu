@@ -1,4 +1,4 @@
-package cn.pumpkin.zhehu.activity;
+package cn.pumpkin.zhehu.ui.activity;
 
 
 import android.os.Bundle;
@@ -25,7 +25,7 @@ public class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarCompat.setStatusBarColor(getActivity(), getActivity().getResources().getColor(R.color.colorPrimary),true);
+        StatusBarCompat.setStatusBarColor(getActivity(), getActivity().getResources().getColor(R.color.colorPrimary), true);
     }
 
     @Override

@@ -1,18 +1,12 @@
-package cn.pumpkin.zhehu.activity;
+package cn.pumpkin.zhehu.ui.activity;
 
-import android.app.Activity;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.githang.statusbar.StatusBarCompat;
@@ -22,6 +16,7 @@ import cn.pumpkin.zhehu.R;
 public abstract class BaseFloatActivity extends AppCompatActivity {
 
     public abstract void initActionBar(View view);
+
     public abstract void floatAction();
 
     private LinearLayout mContentView;
@@ -46,7 +41,7 @@ public abstract class BaseFloatActivity extends AppCompatActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
 
-        if ( R.layout.activity_base_main == layoutResID) {
+        if (R.layout.activity_base_main == layoutResID) {
             super.setContentView(R.layout.activity_base_main);
             mContentView = (LinearLayout) findViewById(R.id.layout_center);
             mContentView.removeAllViews();

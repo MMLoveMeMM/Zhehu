@@ -1,13 +1,11 @@
-package cn.pumpkin.zhehu.login;
+package cn.pumpkin.zhehu.ui.login;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import cn.pumpkin.zhehu.R;
-import cn.pumpkin.zhehu.activity.BaseActivity;
+import cn.pumpkin.zhehu.ui.activity.BaseActivity;
 
 /**
  * @author: zhibao.Liu
@@ -17,7 +15,7 @@ import cn.pumpkin.zhehu.activity.BaseActivity;
  * @see {@link }
  */
 
-public class AppActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView mUserBtn;
     private ImageView mNUserBtn;
@@ -28,17 +26,18 @@ public class AppActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_app);
         initView();
     }
+
     void initView() {
-        mUserBtn=(ImageView)findViewById(R.id.userlogin);
+        mUserBtn = (ImageView) findViewById(R.id.userlogin);
         mUserBtn.setOnClickListener(this);
-        mNUserBtn=(ImageView)findViewById(R.id.youkelogin);
+        mNUserBtn = (ImageView) findViewById(R.id.youkelogin);
         mNUserBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        int id=v.getId();
-        switch (id){
+        int id = v.getId();
+        switch (id) {
             case R.id.userlogin: {
 
             }

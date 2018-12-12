@@ -1,4 +1,4 @@
-package cn.pumpkin.zhehu.adapter;
+package cn.pumpkin.zhehu.ui.adapter;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
@@ -16,11 +16,12 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 
 public class RecyclerViewScrollListener extends RecyclerView.OnScrollListener implements SwipeRefreshLayout.OnRefreshListener {
 
-    public enum  LayoutManagerType {
+    public enum LayoutManagerType {
         LINEAR_LAYOUT,
         GRID_LAYOUT,
         STAGGERED_GRID_LAYOUT
     }
+
     /**
      * 当前布局管理器的类型
      */
@@ -106,12 +107,12 @@ public class RecyclerViewScrollListener extends RecyclerView.OnScrollListener im
 
 
         // 四个条件，分别是是否有数据，状态是否是滑动停止状态，显示的最大条目是否大于整个数据（注意偏移量），是否正在加载数据
-        if(visibleCount>0
-                &&newState==RecyclerView.SCROLL_STATE_IDLE
-                &&mLastVisibleItemPosition>=totalCount-1
-                &&!isLoadData){
+        if (visibleCount > 0
+                && newState == RecyclerView.SCROLL_STATE_IDLE
+                && mLastVisibleItemPosition >= totalCount - 1
+                && !isLoadData) {
             //可以加载数据
-            if(mListener!=null){
+            if (mListener != null) {
                 isLoadData = true;
                 mListener.loadMore();
             }
@@ -134,14 +135,14 @@ public class RecyclerViewScrollListener extends RecyclerView.OnScrollListener im
     }
 
 
-    public void setLoadDataStatus(boolean isLoadData){
+    public void setLoadDataStatus(boolean isLoadData) {
         this.isLoadData = isLoadData;
     }
 
     @Override
     public void onRefresh() {
         //刷新数据的方法
-        if(mListener!=null){
+        if (mListener != null) {
             isLoadData = true;
             mListener.refresh();
         }
@@ -151,8 +152,9 @@ public class RecyclerViewScrollListener extends RecyclerView.OnScrollListener im
     /**
      * 数据加载接口回调
      */
-    public interface OnRecycleRefreshListener{
+    public interface OnRecycleRefreshListener {
         void refresh();
+
         void loadMore();
     }
 }

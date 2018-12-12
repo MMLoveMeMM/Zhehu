@@ -4,16 +4,31 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.githang.statusbar.StatusBarCompat;
 
-import cn.pumpkin.zhehu.home.HomeActivity;
+import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.HashMap;
 
+import cn.pumpkin.zhehu.network.ZhehuWrapper;
+import cn.pumpkin.zhehu.network.model.JuHeNews;
+import cn.pumpkin.zhehu.network.params.JsonParamsBuild;
+import cn.pumpkin.zhehu.ui.activity.BaseActivity;
+import cn.pumpkin.zhehu.ui.activity.BaseFloatActivity;
+import cn.pumpkin.zhehu.ui.home.HomeActivity;
+import rx.Subscription;
+import rx.functions.Action1;
+
+public class MainActivity extends BaseActivity {
+
+    private static final String TAG = MainActivity.class.getName();
     private Button mBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -24,13 +39,32 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mBtn=(Button)findViewById(R.id.button);
+        final ZhehuWrapper wrapper = new ZhehuWrapper();
+
+        mBtn = (Button) findViewById(R.id.button);
         mBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                JSONObject jsonObject = JsonParamsBuild.buildJuHeNews("top", "6cf780f700fb7211695fc721665194**");
+
+                HashMap<String, String> hashMap = new HashMap<>();
+                hashMap.put("type", "top");
+                hashMap.put("key", "6cf780f700fb7211695fc721665194**");
+
+                Subscription subscription = wrapper.getJuHeInfo(hashMap/*jsonObject*/)
+                        .subscribe(zheHuSubscriber(new Action1<JuHeNews>() {
+                            @Override
+                            public void call(JuHeNews o) {
+                                Log.d(TAG, "-- login " + "Success : " + o.getResult().getData().get(0).getTitle());
+                                goNext(o);
+                            }
+                        }, null));
+                mCompositeSubscription.add(subscription);
             }
         });
+    }
 
+    public void goNext(JuHeNews news) {
+        Toast.makeText(getApplicationContext(), "" + news.getResult().getData().get(0).getTitle(), Toast.LENGTH_SHORT).show();
     }
 }

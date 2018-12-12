@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cn.pumpkin.zhehu.activity.BaseMainActivityFragment"
+    tools:context=".ui.activity.BaseMainActivityFragment"
     tools:showIn="@layout/activity_base_main">
 
 </android.support.constraint.ConstraintLayout>

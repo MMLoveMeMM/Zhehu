@@ -1,4 +1,4 @@
-package cn.pumpkin.zhehu.home;
+package cn.pumpkin.zhehu.ui.home;
 
 import android.app.ProgressDialog;
 import android.graphics.Color;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,11 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.pumpkin.zhehu.R;
-import cn.pumpkin.zhehu.activity.BaseFloatActivity;
-import cn.pumpkin.zhehu.adapter.HomeRecyclerViewAdapter;
-import cn.pumpkin.zhehu.adapter.RecyclerViewScrollListener;
+import cn.pumpkin.zhehu.ui.activity.BaseFloatActivity;
+import cn.pumpkin.zhehu.ui.adapter.HomeRecyclerViewAdapter;
+import cn.pumpkin.zhehu.ui.adapter.RecyclerViewScrollListener;
 import cn.pumpkin.zhehu.bean.TalkDatas;
-import cn.pumpkin.zhehu.ui.TalkItemDecoration;
 
 public class HomeActivity extends BaseFloatActivity
         implements View.OnClickListener, RecyclerViewScrollListener.OnRecycleRefreshListener {
@@ -34,6 +32,7 @@ public class HomeActivity extends BaseFloatActivity
     private List<TalkDatas> mTalkDatas;
 
     private RecyclerViewScrollListener mRecyclerViewScrollListener;
+
     @Override
     public void initActionBar(View view) {
         mBackUpView = view.findViewById(R.id.backup);
@@ -77,8 +76,8 @@ public class HomeActivity extends BaseFloatActivity
         //设置适配器
         mRecyclerView.setAdapter(mAdapter);
 
-        mSwipeRefreshLayout=(SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
-        mSwipeRefreshLayout.setColorSchemeColors(Color.RED,Color.GREEN,Color.BLUE,Color.CYAN);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        mSwipeRefreshLayout.setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
         mSwipeRefreshLayout.setOnRefreshListener(mRecyclerViewScrollListener);
 
     }
@@ -96,7 +95,7 @@ public class HomeActivity extends BaseFloatActivity
 
     @Override
     public void refresh() {
-        Toast.makeText(this,"refresh view",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "refresh view", Toast.LENGTH_SHORT).show();
         //刷新的接口调
         mSwipeRefreshLayout.postDelayed(new Runnable() {
             @Override
@@ -105,13 +104,14 @@ public class HomeActivity extends BaseFloatActivity
                 mSwipeRefreshLayout.setRefreshing(false); // 刷新进度条ui消失
                 mRecyclerViewScrollListener.setLoadDataStatus(false);
             }
-        },2000);
+        }, 2000);
     }
 
     private ProgressDialog pd;
+
     @Override
     public void loadMore() {
-        Toast.makeText(this,"load more view",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "load more view", Toast.LENGTH_SHORT).show();
         //加载更多的接口回调
         pd = new ProgressDialog(this);
         pd.show();
@@ -134,6 +134,6 @@ public class HomeActivity extends BaseFloatActivity
                 mRecyclerViewScrollListener.setLoadDataStatus(false);
                 pd.dismiss();
             }
-        },2000);
+        }, 2000);
     }
 }

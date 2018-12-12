@@ -1,9 +1,9 @@
-package cn.pumpkin.zhehu.login;
+package cn.pumpkin.zhehu.ui.login;
 
 import android.os.Bundle;
 
 import cn.pumpkin.zhehu.R;
-import cn.pumpkin.zhehu.activity.BaseActivity;
+import cn.pumpkin.zhehu.ui.activity.BaseActivity;
 
 /**
  * @author: zhibao.Liu

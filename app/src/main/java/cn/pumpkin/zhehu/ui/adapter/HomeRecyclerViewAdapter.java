@@ -1,4 +1,4 @@
-package cn.pumpkin.zhehu.adapter;
+package cn.pumpkin.zhehu.ui.adapter;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,9 +39,10 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
         this.mTalkDatas = datas;
     }
 
-    public static interface  OnItemClickListener{
+    public static interface OnItemClickListener {
         void onItemClick(View view, int positon);
     }
+
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.mOnItemClickListener = listener;
     }
@@ -58,14 +59,14 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
         return null;
     }
 
-    public int getItemViewType(int position){
+    public int getItemViewType(int position) {
         return position % 5 == 0 ? ITEM_TYPE.ITEM_TYPE_THEME.ordinal() : ITEM_TYPE.ITEM_TYPE_INFO.ordinal();
     }
 
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
-        if(manager instanceof GridLayoutManager) {
+        if (manager instanceof GridLayoutManager) {
             final GridLayoutManager gridManager = ((GridLayoutManager) manager);
             gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                 @Override
@@ -79,20 +80,20 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
-        if (holder instanceof ThemeVideoHolder){
+        if (holder instanceof ThemeVideoHolder) {
             themeTitle.setText("励志");
-        }else if (holder instanceof VideoViewHolder){
-            ((VideoViewHolder)holder).userIconView.setImageResource(R.drawable.ic_launcher_background);
-            ((VideoViewHolder)holder).talkTitleView.setText(mTalkDatas.get(position).getTalkTitle());
-            ((VideoViewHolder)holder).talkContentView.setText(mTalkDatas.get(position).getTalkContent());
-            ((VideoViewHolder)holder).talkPraisesView.setText(mTalkDatas.get(position).getTalkPraises()+"");
-            ((VideoViewHolder)holder).talkCommentsView.setText(mTalkDatas.get(position).getTalkComments()+"");
+        } else if (holder instanceof VideoViewHolder) {
+            ((VideoViewHolder) holder).userIconView.setImageResource(R.drawable.ic_launcher_background);
+            ((VideoViewHolder) holder).talkTitleView.setText(mTalkDatas.get(position).getTalkTitle());
+            ((VideoViewHolder) holder).talkContentView.setText(mTalkDatas.get(position).getTalkContent());
+            ((VideoViewHolder) holder).talkPraisesView.setText(mTalkDatas.get(position).getTalkPraises() + "");
+            ((VideoViewHolder) holder).talkCommentsView.setText(mTalkDatas.get(position).getTalkComments() + "");
 
-            if (mOnItemClickListener!=null){
-                ((VideoViewHolder)holder).itemView.setOnClickListener(new View.OnClickListener() {
+            if (mOnItemClickListener != null) {
+                ((VideoViewHolder) holder).itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mOnItemClickListener.onItemClick(((VideoViewHolder)holder).userIconView, position);
+                        mOnItemClickListener.onItemClick(((VideoViewHolder) holder).userIconView, position);
                     }
                 });
             }
@@ -129,11 +130,11 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
     }
 
-    public void refresh(){
+    public void refresh() {
 
     }
 
-    public void addMore(List<TalkDatas> datas){
+    public void addMore(List<TalkDatas> datas) {
         mTalkDatas.addAll(datas);
         this.notifyDataSetChanged();
     }
