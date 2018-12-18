@@ -3,7 +3,6 @@ package cn.pumpkin.zhehu.ui.activity;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -12,8 +11,8 @@ import com.githang.statusbar.StatusBarCompat;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
+import cn.pumpkin.net.RetrofitManager;
 import cn.pumpkin.zhehu.R;
-import cn.pumpkin.zhehu.network.RetrofitManager;
 import rx.Subscriber;
 import rx.functions.Action1;
 import rx.subscriptions.CompositeSubscription;

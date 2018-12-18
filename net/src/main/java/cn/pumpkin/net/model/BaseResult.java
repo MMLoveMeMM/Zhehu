@@ -1,4 +1,4 @@
-package cn.pumpkin.zhehu.network.model;
+package cn.pumpkin.net.model;
 
 import java.io.Serializable;
 

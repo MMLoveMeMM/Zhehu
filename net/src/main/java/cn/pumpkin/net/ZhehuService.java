@@ -1,4 +1,4 @@
-package cn.pumpkin.zhehu.network;
+package cn.pumpkin.net;
 
 import cn.pumpkin.zhehu.network.model.JuHeNews;
 import okhttp3.RequestBody;

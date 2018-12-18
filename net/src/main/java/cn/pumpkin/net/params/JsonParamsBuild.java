@@ -1,4 +1,4 @@
-package cn.pumpkin.zhehu.network.params;
+package cn.pumpkin.net.params;
 
 import org.json.JSONException;
 import org.json.JSONObject;

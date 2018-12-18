@@ -1,11 +1,9 @@
-package cn.pumpkin.zhehu.network;
+package cn.pumpkin.net;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-import cn.pumpkin.zhehu.network.model.BaseResult;
 import cn.pumpkin.zhehu.network.model.JuHeNews;
 import okhttp3.RequestBody;
 import rx.Observable;

@@ -1,26 +1,19 @@
 package cn.pumpkin.zhehu;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.githang.statusbar.StatusBarCompat;
-
 import org.json.JSONObject;
-
 import java.util.HashMap;
 
-import cn.pumpkin.zhehu.network.ZhehuWrapper;
-import cn.pumpkin.zhehu.network.model.JuHeNews;
-import cn.pumpkin.zhehu.network.params.JsonParamsBuild;
+import cn.pumpkin.net.ZhehuWrapper;
+import cn.pumpkin.net.model.JuHeNews;
+import cn.pumpkin.net.params.JsonParamsBuild;
 import cn.pumpkin.zhehu.ui.activity.BaseActivity;
-import cn.pumpkin.zhehu.ui.activity.BaseFloatActivity;
-import cn.pumpkin.zhehu.ui.home.HomeActivity;
 import rx.Subscription;
 import rx.functions.Action1;
 

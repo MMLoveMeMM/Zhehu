@@ -1,6 +1,5 @@
-package cn.pumpkin.zhehu.network;
+package cn.pumpkin.net;
 
-import android.graphics.Bitmap;
 import android.util.Log;
 
 import java.io.File;
