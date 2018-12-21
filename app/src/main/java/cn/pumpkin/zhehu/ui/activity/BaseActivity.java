@@ -28,11 +28,12 @@ import rx.subscriptions.CompositeSubscription;
 
 public class BaseActivity extends FragmentActivity {
 
+    protected static final int DEFAULT_LAYOUT = R.layout.activity_base_fragement;
     // private DialogLoading loading;
     protected Activity activity;
     protected Toast mToast = null;
-
     private LinearLayout mContentView;
+
 
     public CompositeSubscription mCompositeSubscription;
 
@@ -53,7 +54,11 @@ public class BaseActivity extends FragmentActivity {
 
     @Override
     public void setContentView(int layoutResID) {
-        super.setContentView(R.layout.activity_base_fragement);
+        if(layoutResID!=DEFAULT_LAYOUT){
+            super.setContentView(layoutResID);
+        }else {
+            super.setContentView(DEFAULT_LAYOUT);
+        }
     }
 
     /**

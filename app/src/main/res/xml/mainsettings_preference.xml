@@ -18,4 +18,19 @@
             android:summary="姓名"
             android:title="请输入真实姓名" />
     </PreferenceCategory>
+
+    <PreferenceScreen
+        android:key="userinfo_key"
+        android:title="用户信息"
+        android:summary="细节设置"
+        android:fragment="cn.pumpkin.zhehu.ui.settings.UserSettingsFragment"
+        />
+
+    <PreferenceScreen
+        android:key="tost_key"
+        android:title="用户信息1"
+        android:summary="细节设置1"
+        android:fragment="cn.pumpkin.zhehu.ui.settings.UserSettingsFragment"
+        />
+
 </PreferenceScreen>
