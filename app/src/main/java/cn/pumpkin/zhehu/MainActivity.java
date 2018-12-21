@@ -29,9 +29,6 @@ public class MainActivity extends BaseActivity {
         StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         final ZhehuWrapper wrapper = new ZhehuWrapper();
 
         mBtn = (Button) findViewById(R.id.button);
