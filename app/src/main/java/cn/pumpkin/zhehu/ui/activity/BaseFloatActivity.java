@@ -47,6 +47,9 @@ public abstract class BaseFloatActivity extends AppCompatActivity {
             mContentView.removeAllViews();
 
         } else if (layoutResID != R.layout.activity_base_main) {
+            /**
+             * 使用父类UI框架
+             * */
             View addView = LayoutInflater.from(this).inflate(layoutResID, null);
             mContentView.addView(addView);
         }
