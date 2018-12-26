@@ -2,8 +2,19 @@ package cn.pumpkin.zhehu;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.os.Environment;
 import android.text.TextUtils;
 
+import com.netease.nimlib.sdk.NIMClient;
+import com.netease.nimlib.sdk.SDKOptions;
+import com.netease.nimlib.sdk.StatusBarNotificationConfig;
+import com.netease.nimlib.sdk.auth.LoginInfo;
+import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum;
+import com.netease.nimlib.sdk.uinfo.UserInfoProvider;
+import com.netease.nimlib.sdk.uinfo.model.UserInfo;
+import com.netease.nimlib.sdk.util.NIMUtil;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;
 
@@ -21,9 +32,18 @@ import java.io.IOException;
 
 public class ZHApplication extends Application {
 
+    private Context mContext;
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext=getApplicationContext();
+
+        initLeak();
+        initBugly();
+
+    }
+
+    private void initLeak(){
         /**
          * 增加内存泄漏检测
          * */
@@ -31,7 +51,9 @@ public class ZHApplication extends Application {
             return;
         }
         LeakCanary.install(this);
+    }
 
+    private void initBugly(){
         /**
          * 增加bugly纠错
          * */
@@ -45,7 +67,6 @@ public class ZHApplication extends Application {
         strategy.setUploadProcess(processName == null || processName.equals(packageName));
         // 初始化Bugly
         CrashReport.initCrashReport(context, "e0ab9a44eb", true, strategy);
-
     }
 
     /**

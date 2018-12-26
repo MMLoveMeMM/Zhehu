@@ -2,6 +2,7 @@ package cn.pumpkin.zhehu.ui.settings;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.annotation.Nullable;
 // import android.support.v4.app.Fragment;
@@ -20,12 +21,12 @@ import cn.pumpkin.zhehu.ui.activity.BaseFragment;
  * @see {@link }
  */
 
-public class UserSettingsFragment extends Fragment {
+public class UserSettingsFragment extends PreferenceFragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_base_main, container, false);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.userinfo_settings);
     }
 
 }

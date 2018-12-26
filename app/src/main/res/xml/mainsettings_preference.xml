@@ -17,13 +17,17 @@
             android:key="myname"
             android:summary="姓名"
             android:title="请输入真实姓名" />
+        <Preference
+            android:key="yy_key"
+            android:fragment="cn.pumpkin.zhehu.ui.settings.UserSettingsFragment"
+            android:title="用户信息"
+            android:summary="细节设置"/>
     </PreferenceCategory>
 
     <PreferenceScreen
         android:key="userinfo_key"
         android:title="用户信息"
         android:summary="细节设置"
-        android:fragment="cn.pumpkin.zhehu.ui.settings.UserSettingsFragment"
         />
 
     <PreferenceScreen

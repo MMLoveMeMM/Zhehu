@@ -42,14 +42,14 @@ public class MainSettingsFragment extends PreferenceFragment {
             }
         });
 
-        mPreference1= (PreferenceScreen) findPreference("tost_key");
+        /*mPreference1= (PreferenceScreen) findPreference("tost_key");
         mPreference1.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 Toast.makeText(getActivity(),"&&&&&&&&&&&&&",Toast.LENGTH_SHORT).show();
                 return false;
             }
-        });
+        });*/
     }
 
 
