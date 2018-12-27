@@ -35,7 +35,7 @@ public class HomeActivity extends BaseFloatActivity
 
     @Override
     public void initActionBar(View view) {
-        mBackUpView = view.findViewById(R.id.backup);
+        mBackUpView = (ImageView) view.findViewById(R.id.backup);
         mBackUpView.setOnClickListener(this);
     }
 
@@ -50,7 +50,7 @@ public class HomeActivity extends BaseFloatActivity
         setContentView(R.layout.activity_home);
 
         //通过findViewById拿到RecyclerView实例
-        mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         //设置RecyclerView管理器
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         // mRecyclerView.addItemDecoration(new TalkItemDecoration());

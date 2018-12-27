@@ -7,14 +7,6 @@ import android.graphics.Color;
 import android.os.Environment;
 import android.text.TextUtils;
 
-import com.netease.nimlib.sdk.NIMClient;
-import com.netease.nimlib.sdk.SDKOptions;
-import com.netease.nimlib.sdk.StatusBarNotificationConfig;
-import com.netease.nimlib.sdk.auth.LoginInfo;
-import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum;
-import com.netease.nimlib.sdk.uinfo.UserInfoProvider;
-import com.netease.nimlib.sdk.uinfo.model.UserInfo;
-import com.netease.nimlib.sdk.util.NIMUtil;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;
 
