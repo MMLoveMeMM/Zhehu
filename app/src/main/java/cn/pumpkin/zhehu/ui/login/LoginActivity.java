@@ -68,6 +68,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
      * 登录事件响应函数
      */
     private void loginNetSim() {
+        /**
+         * 这个账号信息需要在登入后,服务器下发给用户APP端来登入
+         * */
         LoginInfo info = new LoginInfo("4301000"/*accountEdit.getText().toString().toLowerCase()*/, "123456"/*pswEdit.getText().toString()*/); // config...
         RequestCallback<LoginInfo> callback =
                 new RequestCallback<LoginInfo>() {
