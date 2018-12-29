@@ -50,5 +50,5 @@ dependencies {
     implementation files('libs/bugly_crash_release.jar')
     compile project(path: ':log')
     compile project(path: ':uikit')
-
+    compile project(path: ':ui')
 }

@@ -24,6 +24,12 @@ public class ZHLog {
         }
     }
 
+    public static void v(String msg) {
+        if (LOG_LEVEL > VERBOSE) {
+            Logger.v(LogConstants.BASE_TAG, msg);
+        }
+    }
+
     /**
      * 可以显示数据集合
      * */
@@ -39,9 +45,21 @@ public class ZHLog {
         }
     }
 
+    public static void d(String msg) {
+        if (LOG_LEVEL > DEBUG) {
+            Logger.d(LogConstants.BASE_TAG, msg);
+        }
+    }
+
     public static void i(String tag, String msg) {
         if (LOG_LEVEL > INFO) {
             Logger.i(tag, msg);
+        }
+    }
+
+    public static void i(String msg) {
+        if (LOG_LEVEL > INFO) {
+            Logger.i(LogConstants.BASE_TAG, msg);
         }
     }
 
@@ -51,9 +69,21 @@ public class ZHLog {
         }
     }
 
+    public static void w(String msg) {
+        if (LOG_LEVEL > WARN) {
+            Logger.w(LogConstants.BASE_TAG, msg);
+        }
+    }
+
     public static void e(String tag, String msg) {
         if (LOG_LEVEL > ERROR) {
             Logger.e(tag, msg);
+        }
+    }
+
+    public static void e(String msg) {
+        if (LOG_LEVEL > ERROR) {
+            Logger.e(LogConstants.BASE_TAG, msg);
         }
     }
 

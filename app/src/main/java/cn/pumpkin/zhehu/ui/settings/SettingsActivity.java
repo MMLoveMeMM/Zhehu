@@ -20,8 +20,8 @@ public class SettingsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(DEFAULT_LAYOUT);
-        initFragements();
+        setContentView(R.layout.activity_settings);
+        // initFragements();
     }
 
     @Override
@@ -40,6 +40,6 @@ public class SettingsActivity extends BaseActivity {
                 .add(R.id.fragment_container, mMainSettingsFragment, mMainSettingsFragment.getClass().getName())
                 .show(mMainSettingsFragment)
                 .commit();*/
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container, mMainSettingsFragment).commit();
+        // getFragmentManager().beginTransaction().replace(R.id.fragment_container, mMainSettingsFragment).commit();
     }
 }

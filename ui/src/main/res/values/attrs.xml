@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="BasicSettingViewStyle">
-        <attr name="title" format="string|reference"/>
-        <attr name="hint" format="string|reference"/>
+
+    <declare-styleable name="BasicViewStyle">
     </declare-styleable>
+
+    <declare-styleable name="BasicSettingViewStyle">
+        <attr name="titleColor" format="color"/>
+        <attr name="summaryColor" format="color"/>
+        <attr name="titleSize" format="dimension"/>
+        <attr name="summarySize" format="dimension"/>
+        <attr name="frontSrc" format="reference"/>
+        <attr name="endSrc" format="reference"/>
+        <attr name="substance" format="string"/>
+        <attr name="summary" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="BasicEditViewStyle">
+        <attr name="editBackgound" format="reference"/>
+        <attr name="frontEditSrc" format="reference"/>
+        <attr name="endEditSrc" format="reference"/>
+        <attr name="editColor" format="color"/>
+        <attr name="editTextSize" format="dimension"/>
+    </declare-styleable>
+
 </resources>

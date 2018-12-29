@@ -5,15 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bamboo.it.logger.BHLog;
-import cn.bamboo.it.logger.common.LogConstants;
-
 public class DBManager {
-    private static final String TAG = LogConstants.MODULE_TAG_STORAGE + "DBManager";
+    private static final String TAG = DBManager.class.getName();
 
     private Context mContext;
 
@@ -76,7 +74,7 @@ public class DBManager {
         try {
             db.execSQL(sql);
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
             result = false;
         }
         return result;
@@ -87,7 +85,7 @@ public class DBManager {
         try {
             db.execSQL(sql, bindArgs);
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
             result = false;
         }
         return result;
@@ -101,13 +99,13 @@ public class DBManager {
         boolean success = false;
         try {
             ContentValues values = DBUtil.getContentValuesByEntity(en);
-            BHLog.d(TAG, "insert:" + DBUtil.getTableName(en) + "," + values.toString());
+            Log.d(TAG, "insert:" + DBUtil.getTableName(en) + "," + values.toString());
             long result = db.insert(DBUtil.getTableName(en), null, values);
             if (result != -1) {
                 success = true;
             }
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         return success;
     }
@@ -128,7 +126,7 @@ public class DBManager {
                 success = true;
             }
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         return success;
     }
@@ -157,7 +155,7 @@ public class DBManager {
                 success = true;
             }
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         return success;
     }
@@ -203,7 +201,7 @@ public class DBManager {
         try {
             tabName = clazz.newInstance().getTableName();
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         if (null == tabName) {
             return null;
@@ -229,7 +227,7 @@ public class DBManager {
         try {
             tabName = clazz.newInstance().getTableName();
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         if (null == tabName) {
             return null;
@@ -244,7 +242,7 @@ public class DBManager {
                     filed += (fields[i] + "=? and ");
                 }
             }
-            BHLog.d(TAG, "queryByWhere filed:" + filed);
+            Log.d(TAG, "queryByWhere filed:" + filed);
             entityList = query(clazz, tabName, true, filed, values, groupBy, having, orderBy, limit);
         } finally {
         }
@@ -256,7 +254,7 @@ public class DBManager {
         try {
             tabName = clazz.newInstance().getTableName();
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         if (null == tabName) {
             return null;
@@ -271,7 +269,7 @@ public class DBManager {
                     filed += (fields[i] + "=? and ");
                 }
             }
-            BHLog.d(TAG, "queryByWhere filed:" + filed);
+            Log.d(TAG, "queryByWhere filed:" + filed);
             entityList = query(clazz, tabName, true, filed, values, null, null, null, null);
         } finally {
         }
@@ -283,7 +281,7 @@ public class DBManager {
         try {
             tabName = clazz.newInstance().getTableName();
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         if (null == tabName) {
             return null;
@@ -307,7 +305,7 @@ public class DBManager {
         try {
             tableName = clazz.newInstance().getTableName();
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         if (null == tableName) {
             return null;
@@ -337,7 +335,7 @@ public class DBManager {
         try {
             tableName = clazz.newInstance().getTableName();
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         if (null == tableName) {
             return null;
@@ -370,7 +368,7 @@ public class DBManager {
 
         DBEntity existEntity = entityExist(entity);
 
-        BHLog.d(TAG, "inertOrUpdate ?:" + (null == existEntity));
+        Log.d(TAG, "inertOrUpdate ?:" + (null == existEntity));
         if (null == existEntity) {
             success = insert(entity);
         } else {
@@ -411,7 +409,7 @@ public class DBManager {
         try {
             tableName = clazz.newInstance().getTableName();
         } catch (Exception e) {
-            BHLog.d(TAG, "", e);
+            Log.d(TAG, "", e);
         }
         if (null == tableName) {
             return 0;

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="ui">
         <!--公共风格属性-->
+        <item name="titleColor">#00ff00</item>
+        <item name="summaryColor">#0000ff</item>
     </style>
 
 </resources>

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import cn.pumpkin.zhehu.network.model.BaseResult;
+import cn.pumpkin.net.model.BaseResult;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;

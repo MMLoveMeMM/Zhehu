@@ -2,19 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:layout_gravity="center"
-    android:background="@drawable/basic_item_click"
-    android:clickable="true">
+    android:layout_gravity="center">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_gravity="center">
 
         <ImageView
-            android:id="@+id/frontSrc"
+            android:id="@+id/frontSrcEdit"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentLeft="true"
@@ -22,17 +20,18 @@
             android:scaleType="fitXY"
             android:src="@drawable/panda" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/edit"
+            android:layout_width="208dp"
+            android:layout_height="48dp"
+            android:layout_toRightOf="@+id/frontSrcEdit"
+            android:layout_toLeftOf="@+id/endSrcEdit"
+            android:layout_marginLeft="8dp"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/frontSrc"
-            android:layout_marginLeft="16dp"
-            android:text="xianshi" />
+            android:background="@drawable/basic_item_edit" />
 
         <ImageView
-            android:id="@+id/endSrc"
+            android:id="@+id/endSrcEdit"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentRight="true"
