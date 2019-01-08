@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.netease.nim.uikit.NimUIKit;
+// import com.netease.nim.uikit.NimUIKit;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.RequestCallback;
 import com.netease.nimlib.sdk.auth.AuthService;
@@ -77,7 +77,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     @Override
                     public void onSuccess(LoginInfo loginInfo) {
                         ZHCache.setAccount("4301000"/*accountEdit.getText().toString().toLowerCase()*/);
-                        NimUIKit.setAccount("4301000"/*accountEdit.getText().toString().toLowerCase()*/);
+                        // NimUIKit.setAccount("4301000"/*accountEdit.getText().toString().toLowerCase()*/);
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                         finish();
                     }

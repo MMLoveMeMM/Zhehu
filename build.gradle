@@ -25,11 +25,23 @@ allprojects {
 }
 
 ext{
-    compileSdkVersion = 25
-    buildToolsVersion = "27.0.3"
+    // compileSdkVersion = 25
+    // buildToolsVersion = "27.0.3"
     targetSdkVersionPhone = 25
-    minSdkVersionPhone = 24
+    minSdkVersionPhone = 22
     supportVersion = "25.1.0"
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.2'
+    minSdkVersion = 22
+    // targetSdkVersion = 26
+    appTargetSdkVersion = 25
+    versionCode = 6
+    versionName = '1.1.0'
+
+    sdkSourceCompatibility = 1.7
+    sdkTargetCompatibility = 1.7
+    appSourceCompatibility = 1.7
+    appTargetCompatibility = 1.7
 }
 
 task clean(type: Delete) {
