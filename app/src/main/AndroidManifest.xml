@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.pumpkin.zhehu">
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
 
-    <!-- SDK权限声明，第三方APP接入时，请将com.netease.nim.demo替换为自己的包名-->
+    <!-- SDK权限声明，第三方APP接入时，请将com.netease.nim.demo替换为自己的包名 -->
     <permission
         android:name="cn.pumpkin.zhehu.permission.RECEIVE_MSG"
-        android:protectionLevel="signature"/>
+        android:protectionLevel="signature" />
 
     <!-- 权限声明 -->
-    <!-- 访问网络状态-->
+    <!-- 访问网络状态 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -21,22 +22,21 @@
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- 外置存储存取权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- 多媒体相关 -->
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <!-- 如果需要实时音视频通话模块，下面的权限也是必须的。否则，可以不加 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <!-- 接收SDK消息广播权限， 第三方APP接入时，请将com.netease.nim.demo替换为自己的包名 -->
-    <uses-permission android:name="cn.pumpkin.zhehu.ZHApplication.permission.RECEIVE_MSG"/>
-
+    <uses-permission android:name="cn.pumpkin.zhehu.ZHApplication.permission.RECEIVE_MSG" />
 
     <application
         android:name=".ZHApplication"
@@ -53,44 +53,47 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.home.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.settings.UserSettingsActivity" />
 
-        <activity android:name=".ui.settings.SettingsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".ui.settings.UserSettingsActivity"/>
-
-        <!-- APP key, 可以在这里设置，也可以在 SDKOptions 中提供。
-            如果 SDKOptions 中提供了，取 SDKOptions 中的值。 -->
+        <!--
+             APP key, 可以在这里设置，也可以在 SDKOptions 中提供。
+            如果 SDKOptions 中提供了，取 SDKOptions 中的值。
+        -->
         <meta-data
             android:name="com.netease.nim.appKey"
             android:value="f96f3d21c36d4b20dbb2c75783262d7a" />
 
-        <!-- NimService 组件。 如需保持后台推送，使用独立进程效果会更好。-->
-        <service android:name="com.netease.nimlib.service.NimService"
-            android:process=":core"/>
+        <!-- NimService 组件。 如需保持后台推送，使用独立进程效果会更好。 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService"
+            android:process=":core" />
         <!-- 运行后台辅助服务 -->
         <service
             android:name="com.netease.nimlib.service.NimService$Aux"
-            android:process=":core"/>
+            android:process=":core" />
 
         <!-- 状态监听 Receiver，保持和 NimService 同一进程 -->
-        <receiver android:name="com.netease.nimlib.service.NimReceiver"
-            android:process=":core"
-            android:exported="false">
+        <receiver
+            android:name="com.netease.nimlib.service.NimReceiver"
+            android:exported="false"
+            android:process=":core">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 
         <!-- 云信进程间通信 Receiver -->
-        <receiver android:name="com.netease.nimlib.service.ResponseReceiver"/>
+        <receiver android:name="com.netease.nimlib.service.ResponseReceiver" />
 
+        <activity android:name=".ui.settings.UserProfileActivity"></activity>
     </application>
 
 </manifest>
