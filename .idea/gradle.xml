@@ -13,7 +13,6 @@
             <option value="$PROJECT_DIR$/log" />
             <option value="$PROJECT_DIR$/net" />
             <option value="$PROJECT_DIR$/ui" />
-            <option value="$PROJECT_DIR$/uikit" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
