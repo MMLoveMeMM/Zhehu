@@ -19,7 +19,7 @@ import cn.pumpkin.zhehu.R;
 import cn.pumpkin.zhehu.ui.activity.BaseFloatActivity;
 import cn.pumpkin.zhehu.ui.adapter.HomeRecyclerViewAdapter;
 import cn.pumpkin.zhehu.ui.adapter.RecyclerViewScrollListener;
-import cn.pumpkin.zhehu.bean.TalkDatas;
+import cn.pumpkin.zhehu.ui.bean.TalkDatas;
 
 public class HomeActivity extends BaseFloatActivity
         implements View.OnClickListener, RecyclerViewScrollListener.OnRecycleRefreshListener {

@@ -1,9 +1,9 @@
-package cn.pumpkin.zhehu.bean;
+package cn.pumpkin.zhehu.ui.bean;
 
 /**
  * @author: zhibao.Liu
  * @version:
- * @date: 2018/12/4 15:32
+ * @date: 2019/2/14 16:04
  * @des:
  * @see {@link }
  */

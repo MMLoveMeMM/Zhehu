@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import cn.pumpkin.zhehu.R;
-import cn.pumpkin.zhehu.bean.TalkDatas;
+import cn.pumpkin.zhehu.ui.bean.TalkDatas;
 
 /**
  * @author: zhibao.Liu

@@ -54,7 +54,6 @@ dependencies {
     // 项目自己的module
     compile project(path: ':net')
     compile project(path: ':log')
-    compile project(path: ':uikit')
+    // compile project(path: ':uikit')
     compile project(path: ':ui')
-    implementation project(':avchatkit')
 }
